@@ -7,7 +7,6 @@ import {
     HashRouter
 } from 'react-router-dom';
 import Cities from "../js/cities";
-import CityIndexItem from './city_index_item';
 
 class CitiesSplash extends React.Component {
 
