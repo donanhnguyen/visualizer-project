@@ -1,0 +1,18 @@
+.qbutton {
+    -webkit-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -moz-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -ms-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    -o-transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
+    margin: 20px auto;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.qbutton {
+    color: rgba(22, 32, 54, 0.803);
+    box-shadow: rgba(190, 220, 255, 0.783) 0 0px 0px 2px inset;
+}
+.qbutton:hover {
+    color: rgb(255, 255, 255);
+    box-shadow: rgba(10, 66, 162, 0.7) 0 0px 0px 40px inset;
+}

@@ -18,7 +18,7 @@ class CitiesSplash extends React.Component {
     allCities () {
         var displayCities = Cities.map((city, index) => {
             return (
-                <Link to={`/${index}`}>{city.name}</Link>
+                <p><Link class='city-link' to={`/${index}`}>{index+1}. {city.name}</Link></p>
             )
         })
         return displayCities;
@@ -28,7 +28,7 @@ class CitiesSplash extends React.Component {
         return (
             <div>
                 <h1>Here are the top fastest growing cities in America!</h1>
-                <div>
+                <div class='cities-splash'>
                     {this.allCities()}
                 </div>
             </div>
