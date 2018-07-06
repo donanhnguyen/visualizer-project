@@ -7,6 +7,7 @@ import {
     HashRouter
 } from 'react-router-dom';
 import Cities from "../js/cities";
+import * as D3Stuff from '../js/d3-stuff';
 
 class CityIndexItem extends React.Component {
 
@@ -21,7 +22,6 @@ class CityIndexItem extends React.Component {
 
     render () {
         var currentCity = this.state.currentCity;
-        console.log(this.state.currentCityPopulation);
         return (
             <div>
                 <button class='qbutton'><Link class='city-link' to='/'>Back to home page</Link></button>
