@@ -6,5 +6,5 @@ import Cities from "./js/cities";
 document.addEventListener("DOMContentLoaded", () => {
     var root = document.getElementById("root");
     ReactDOM.render(<Root />, root);
-    window.Cities = Cities;
+
 });
