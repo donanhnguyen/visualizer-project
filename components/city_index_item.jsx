@@ -22,13 +22,8 @@ class CityIndexItem extends React.Component {
     }
 
     componentDidMount() {
-        var array = [5, 10, 15, 20, 25];
         D3Stuff.createBarChart(this.state.currentCityPopulation);
     }
-
-    // componentWillUnmount() {
-    //     D3Stuff.refreshBarChart();
-    // }
 
     render () {
         var currentCity = this.state.currentCity;

@@ -6,8 +6,8 @@ export const createBarChart = (array) => {
         .attr("class", "bar-chart")
         .style("height", function (d) {
             var pop = parseFloat(d.replace(/,/g, ''));
-            var barHeight = (pop / 10000 );
-            console.log(parseFloat(d.replace(/,/g, '')) / 10000);
+            var barHeight = (pop / 10000 ) + 80;
+            console.log(barHeight);
             return barHeight + "px";
         });
 };
