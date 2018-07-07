@@ -26,3 +26,9 @@ button {
 .city-link:hover {
     color: rgb(0, 30, 128);
 }
+.bar-chart {
+    background-color: rgb(219, 251, 255);
+    display: inline-block;
+    width: 60px;
+    margin: 5px;
+}
