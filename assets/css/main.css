@@ -29,8 +29,13 @@ button {
 .bar {
     background-color: rgb(17, 39, 141);
     display: inline-block;
-    width: 60px;
-    margin: 5px;
+    min-width: 60px;
+    margin: 7px;
+    color: white;
+    padding: 7px;
+}
+.bar:hover {
+    background-color: green;
 }
 .bar-graph {
     display: inline-block;
