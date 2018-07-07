@@ -26,9 +26,16 @@ button {
 .city-link:hover {
     color: rgb(0, 30, 128);
 }
-.bar-chart {
+.bar {
     background-color: rgb(17, 39, 141);
     display: inline-block;
     width: 60px;
     margin: 5px;
+}
+.bar-graph {
+    display: inline-block;
+    min-width: 600px;
+    min-height: 200px;
+    border: 1px solid blue;
+    padding: 15px;
 }
