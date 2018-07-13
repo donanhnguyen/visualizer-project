@@ -7,6 +7,8 @@
 //     .domain([0, d3.max(array, function (d, i) {return d.pop} )   ])
 //     .range([width, 0 ]).nice();
 
+
+
 export const createBarChart = (array) => {
 
 d3.select("#bar-graph").selectAll("div")
