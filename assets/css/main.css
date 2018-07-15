@@ -35,9 +35,14 @@ button {
     background-color: green;
 }
 .bar-graph {
-    display: inline-block;
-    min-width: 600px;
-    min-height: 200px;
-    border: 1px solid blue;
-    padding: 15px;
+
+}
+svg {
+    background-color: White;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid black;
+}
+g {
+    font-size: 12px;
 }

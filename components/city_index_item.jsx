@@ -33,7 +33,9 @@ class CityIndexItem extends React.Component {
                 <button class='qbutton'><Link class='city-link' to='/'>Back to home page</Link></button>
                 <h1>9 year population growth from 2007-2016 for {currentCity.name}</h1>
                 <div class='bar-graph' id="bar-graph">
+                    <svg id='svg' width="600" height="300">
 
+                    </svg>
                 </div>
             </div>
         )
