@@ -8,7 +8,6 @@
 //     .range([width, 0 ]).nice();
 
 export const createBarChart = (array) => {
-
 d3.select("#bar-graph").selectAll("div")
         .data(array)
         .enter()
