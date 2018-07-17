@@ -52,6 +52,14 @@ var yAxis = svg.append("g")
     );
 yAxisFn(yAxis);
 
+var rectGrp = svg.append("g")
+    .attr(
+        "transform", "translate ("+ padding.left + "," + padding.top + ")"
+    )
+
+
+};
+
 // d3.select("#bar-graph").selectAll("div")
 //         .data(array)
 //         .enter()
@@ -65,8 +73,5 @@ yAxisFn(yAxis);
 //         .html(function (d) {return d.pop} )
         
 //         ;
-
-};
-
 
 
