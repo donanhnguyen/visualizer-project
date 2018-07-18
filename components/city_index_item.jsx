@@ -17,7 +17,6 @@ class CityIndexItem extends React.Component {
             currentCityIndex: this.props.match.params.cityId,
             currentCity: Cities[this.props.match.params.cityId],
             currentCityPopulation: Cities[this.props.match.params.cityId].population
-            // currentCityPopulation: Object.keys(Cities[this.props.match.params.cityId].population).map((key) => (Cities[this.props.match.params.cityId].population[key]))
         }
     }
 
