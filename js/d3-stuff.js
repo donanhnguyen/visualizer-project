@@ -91,8 +91,6 @@ rectGrp.selectAll("text")
     })
     .attr("style", "font-size: 20px")
 
-
-    
 };
 
 
