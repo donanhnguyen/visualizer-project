@@ -26,7 +26,6 @@ class CityIndexItem extends React.Component {
 
     render () {
         var currentCity = this.state.currentCity;
-        console.log(this.state.currentCityPopulation);
         return (
             <div>
                 <button class='qbutton'><Link class='city-link' to='/'>Back to home page</Link></button>

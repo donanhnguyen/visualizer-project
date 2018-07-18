@@ -1,26 +1,8 @@
-
-
-
-// var margin = {top: 20, right: 10, bottom: 100, left: 40};
-// var width = 700 - margin.right - margin.left;
-// var height = 500 - margin.top - margin.bottom;
-
-// var svg = d3.select("body")
-//     .append("svg")
-//     .attr({
-//         "width": width + margin.right + margin.left,
-//         "height": height + margin.top + margin.bottom
-//     })
-
-    // .append("g")
-    //     .attr("transform", "translate (" + margin.left + "," + margin.right + ')');
-        
-
-
 export const createBarChart = (array) => {
+console.log(d3);
 
 var colors = d3.schemeCategory10;
-console.log(d3);
+
 var svg = d3.select("#svg");
 
 var padding = {top: 20, right: 30, bottom: 30, left: 80};
