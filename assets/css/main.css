@@ -30,7 +30,7 @@ button {
     padding: 7px;
 }
 .bar:hover {
-    fill: rgb(93, 193, 255);
+    opacity: 0.5;
 }
 
 svg {
