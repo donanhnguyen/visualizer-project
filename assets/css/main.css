@@ -32,9 +32,7 @@ button {
 .bar:hover {
     fill: rgb(93, 193, 255);
 }
-.bar-graph {
 
-}
 svg {
     background-color: White;
     margin-left: auto;

@@ -12,7 +12,6 @@ var chartArea = {
     "height": parseInt(svg.style("height")) - padding.top - padding.bottom
 };
 
-
 var yScale = d3.scaleLinear()
     .domain([0, d3.max(array, function(d, i) {return parseInt(parseFloat((d.pop.replace(/,/g, ''))))  } )   ])
     .range([chartArea.height, 0]).nice();
