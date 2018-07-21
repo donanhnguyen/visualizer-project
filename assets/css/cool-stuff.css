@@ -16,3 +16,43 @@
     color: rgb(255, 255, 255);
     box-shadow: rgba(10, 66, 162, 0.7) 0 0px 0px 40px inset;
 }
+
+.drop {
+    position: relative;
+    animation: cardDrop 1s;
+    -moz-animation: cardDrop 1s;
+    -webkit-animation: cardDrop 1s;
+    -o-animation: cardDrop 1s;
+}
+@keyframes cardDrop {
+    from {
+        left: -1000px;
+    }
+    to {
+        left: 0px;
+    }
+}
+@-moz-keyframes cardDrop { /* Firefox */
+    from {
+        top: -650px;
+    }
+    to {
+        top: 0px;
+    }
+}
+@-webkit-keyframes cardDrop { /* Safari and Chrome */
+    from {
+        top: -650px;
+    }
+    to {
+        top: 0px;
+    }
+}
+@-o-keyframes cardDrop { /* Opera */
+    from {
+        top: -650px;
+    }
+    to {
+        top: 0px;
+    }
+}
