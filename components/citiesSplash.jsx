@@ -17,7 +17,8 @@ class CitiesSplash extends React.Component {
     allCities () {
         var displayCities = Cities.map((city, index) => {
             return (
-                <p><Link class='city-link' to={`/${index}`}>{index+1}. {city.name}</Link></p>
+                // <div class={`${city.name}` + `${' city-pic'}`}><Link class='city-link' to={`/${index}`}>{index+1}. {city.name}</Link></div>
+                <Link class='city-link' to={`/${index}`}><div class={`${city.name.replace(/\s/g, '')}` + `${' city-pic'}`}></div></Link>
             )
         })
         return displayCities;
