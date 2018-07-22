@@ -1,5 +1,4 @@
 export const createBarChart = (array) => {
-console.log(d3);
 
 var colors = d3.schemeCategory10;
 
@@ -58,7 +57,7 @@ rectGrp.selectAll("rect")
     .attr("fill", function (d, i) {
         return colors[i];
     })
-    .attr("class", "bar")
+    .attr("class", "bar bar-increase")
 
 rectGrp.selectAll("text")
     .data(array)

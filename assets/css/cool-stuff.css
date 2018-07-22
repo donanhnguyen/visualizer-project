@@ -56,3 +56,44 @@
         top: 0px;
     }
 }
+
+.bar-increase {
+    position: relative;
+    animation: barIncrease 1s;
+    -moz-animation: barIncrease 1s;
+    -webkit-animation: barIncrease 1s;
+    -o-animation: barIncrease 1s;
+}
+@keyframes barIncrease {
+    from {
+        height: 0%;
+    }
+    to {
+        height: -100%;
+    }
+}
+@-moz-keyframes barIncrease { /* Firefox */
+    from {
+        height: 0px;
+    }
+    to {
+        height: -100px;
+    }
+}
+@-webkit-keyframes barIncrease { /* Safari and Chrome */
+    from {
+        height: 0px;
+    }
+    to {
+        height: -100px;
+    }
+}
+@-o-keyframes barIncrease { /* Opera */
+    from {
+        height: 0px;
+    }
+    to {
+        height: 100px;
+    }
+}
+
