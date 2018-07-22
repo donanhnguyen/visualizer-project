@@ -6,15 +6,15 @@
     transition: all 200ms cubic-bezier(0.390, 0.500, 0.150, 1.360);
     margin: 20px auto;
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 .qbutton {
-    color: rgba(32, 51, 95, 0.988);
-    box-shadow: rgba(190, 220, 255, 0.783) 0 0px 0px 2px inset;
+    color: rgba(161, 187, 227, 0.988);
+    box-shadow: rgba(119, 136, 155, 0.783) 0 0px 0px 1px inset;
 }
 .qbutton:hover {
     color: rgb(255, 255, 255);
-    box-shadow: rgba(10, 66, 162, 0.7) 0 0px 0px 40px inset;
+    box-shadow: rgba(232, 240, 255, 0.7) 0 0px 0px 40px inset;
 }
 
 .drop {
