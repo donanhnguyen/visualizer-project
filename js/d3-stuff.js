@@ -54,9 +54,9 @@ rectGrp.selectAll("rect")
     .attr("y", function (d, i) {
         return yScale(parseFloat((d.pop.replace(/,/g, ''))));
     })
-    // .attr("fill", function (d, i) {
-    //     return colors[i];
-    // })
+    .attr("fill", function (d, i) {
+        return colors[i];
+    })
     .attr("class", "bar bar-increase")
 
 rectGrp.selectAll("text")

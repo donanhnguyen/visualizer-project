@@ -35,10 +35,11 @@ a:hover, a:active { text-decoration: none;}
     margin: 7px;
     color: white;
     padding: 7px;
-    fill: rgba(7, 34, 121, 0.735);
+    opacity: 0.9;
+    /* fill: rgba(7, 34, 121, 0.735); */
 }
 .bar:hover {
-    opacity: 0.5;
+    opacity: 1;
     cursor: pointer;
 }
 
