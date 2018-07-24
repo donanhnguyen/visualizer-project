@@ -7,6 +7,7 @@ import {
     HashRouter
 } from 'react-router-dom';
 import Cities from "../js/cities";
+import PieChart from "./pie-chart";
 import * as D3Stuff from '../js/d3-stuff';
 
 class CityIndexItem extends React.Component {
@@ -38,6 +39,7 @@ class CityIndexItem extends React.Component {
                     <div class='animated' id="bar-graph">
                         <svg id='svg' width="1000" height="400">
                         </svg>
+                        <PieChart currentCity={currentCity}/>
                     </div>
                 </div>
             )  
