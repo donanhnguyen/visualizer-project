@@ -17,7 +17,6 @@ class CitiesSplash extends React.Component {
     allCities () {
         var displayCities = Cities.map((city, index) => {
             return (
-                // <div class={`${city.name}` + `${' city-pic'}`}><Link class='city-link' to={`/${index}`}>{index+1}. {city.name}</Link></div>
                 <Link class='city-link' to={`/${index}`}><div class={`${city.name.replace(/\s/g, '')}` + `${' city-pic'}`}></div></Link>
             )
         })
@@ -27,7 +26,7 @@ class CitiesSplash extends React.Component {
     render () {
         return (
             <div class='animated zoomIn'>
-                <h1>Here are the top fastest growing cities in America!</h1>
+                <h1 class='heading'>Here are the top fastest growing cities in America!</h1>
                 <div class='cities-splash'>
                     {this.allCities()}
                 </div>
