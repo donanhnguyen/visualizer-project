@@ -16,12 +16,16 @@ class CityIndexItem extends React.Component {
         this.state = {
             currentCityIndex: this.props.match.params.cityId,
             currentCity: Cities[this.props.match.params.cityId],
-            currentCityPopulation: Cities[this.props.match.params.cityId].population
+            currentCityPopulation: Cities[this.props.match.params.cityId].population,
+            loaded: false
         }
     }
 
     componentDidMount() {
         D3Stuff.createBarChart(this.state.currentCityPopulation);
+        setTimeout(function () {
+            this.setState({loaded: true});
+        }.bind(this), 2000);
     }
 
     render () {
