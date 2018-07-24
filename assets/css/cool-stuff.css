@@ -99,17 +99,18 @@
 
 /* spinner */
 .spinner {
-    margin: 100px auto;
-    width: 50px;
-    height: 40px;
+    margin: 170px auto;
+    width: 300px;
+    height: 300px;
     text-align: center;
     font-size: 10px;
   }
   
   .spinner > div {
-    background-color: #333;
+    background-color: rgb(146, 188, 238);
     height: 100%;
-    width: 6px;
+    width: 50px;
+    border-radius: 5px;
     display: inline-block;
     
     -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;

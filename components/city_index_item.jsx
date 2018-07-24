@@ -25,7 +25,7 @@ class CityIndexItem extends React.Component {
         setTimeout(function () {
             this.setState({loaded: true});
             D3Stuff.createBarChart(this.state.currentCityPopulation);
-        }.bind(this), 2000);
+        }.bind(this), 1200);
     }
 
     render () {
