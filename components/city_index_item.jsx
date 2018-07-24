@@ -22,25 +22,37 @@ class CityIndexItem extends React.Component {
     }
 
     componentDidMount() {
-        D3Stuff.createBarChart(this.state.currentCityPopulation);
         setTimeout(function () {
             this.setState({loaded: true});
+            D3Stuff.createBarChart(this.state.currentCityPopulation);
         }.bind(this), 2000);
     }
 
     render () {
         var currentCity = this.state.currentCity;
-        return (
-            <div>
-                <button class='qbutton'><Link class='city-link' to='/'>Back to home page</Link></button>
-                <h1>9 year population growth from 2007-2016 for {currentCity.name}</h1>
-                <div class='animated' id="bar-graph">
-                    <svg id='svg' width="1000" height="400">
-
-                    </svg>
+        if (this.state.loaded) {
+            return (
+                <div>
+                    <button class='qbutton'><Link class='city-link' to='/'>Back to home page</Link></button>
+                    <h1>9 year population growth from 2007-2016 for {currentCity.name}</h1>
+                    <div class='animated' id="bar-graph">
+                        <svg id='svg' width="1000" height="400">
+                        </svg>
+                    </div>
                 </div>
-            </div>
-        )
+            )  
+        } else {
+            return (
+                <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+                </div>
+            )
+        }
+        
     }
 
 }
