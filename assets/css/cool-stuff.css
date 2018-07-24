@@ -77,7 +77,7 @@
         height: 0px;
     }
     to {
-        height: -100px;
+        height: -100%;
     }
 }
 @-webkit-keyframes barIncrease { /* Safari and Chrome */
@@ -85,7 +85,7 @@
         height: 0px;
     }
     to {
-        height: -100px;
+        height: -100%;
     }
 }
 @-o-keyframes barIncrease { /* Opera */
@@ -93,7 +93,7 @@
         height: 0px;
     }
     to {
-        height: 100px;
+        height: -100%;
     }
 }
 
