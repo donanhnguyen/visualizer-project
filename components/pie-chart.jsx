@@ -22,7 +22,7 @@ class PieChart extends React.Component {
 
     render () {
         return (
-            <div>
+            <div class='pie-chart-container'>
                 pie chart bitch
                 <br/>
                 {this.props.currentCity.name}

@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import Cities from "../js/cities";
 import * as D3Stuff from '../js/d3-stuff';
-
+import PieChart from './pie-chart'; 
 class CityIndexItem extends React.Component {
 
     constructor(props) {
@@ -30,11 +30,15 @@ class CityIndexItem extends React.Component {
     }
 
     switchToPieChart () {
-        this.setState({pieChart: true});
+        this.setState({
+            pieChart: true,
+            loaded: false,
+        });
     }
 
     render () {
         var currentCity = this.state.currentCity;
+        console.log(this.state.pieChart);
         if (this.state.loaded) {
             return (
                 <div>
@@ -47,7 +51,7 @@ class CityIndexItem extends React.Component {
                     <button onClick={this.switchToPieChart.bind(this)}>Racial Demographics</button>
                 </div>
             )  
-        } else {
+        } else if (!this.state.loaded && !this.state.pieChart) {
             return (
                 <div class="spinner">
                 <div class="rect1"></div>
@@ -56,6 +60,10 @@ class CityIndexItem extends React.Component {
                 <div class="rect4"></div>
                 <div class="rect5"></div>
                 </div>
+            )
+        } else if (this.state.pieChart) {
+            return (
+                <PieChart currentCity={currentCity}/>
             )
         }
         
