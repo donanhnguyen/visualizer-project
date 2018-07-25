@@ -7,7 +7,6 @@ import {
     HashRouter
 } from 'react-router-dom';
 import Cities from "../js/cities";
-import PieChart from "./pie-chart";
 import * as D3Stuff from '../js/d3-stuff';
 
 class CityIndexItem extends React.Component {
@@ -18,7 +17,8 @@ class CityIndexItem extends React.Component {
             currentCityIndex: this.props.match.params.cityId,
             currentCity: Cities[this.props.match.params.cityId],
             currentCityPopulation: Cities[this.props.match.params.cityId].population,
-            loaded: false
+            loaded: false,
+            pieChart: false,
         }
     }
 
@@ -27,6 +27,10 @@ class CityIndexItem extends React.Component {
             this.setState({loaded: true});
             D3Stuff.createBarChart(this.state.currentCityPopulation);
         }.bind(this), 700);
+    }
+
+    switchToPieChart () {
+        this.setState({pieChart: true});
     }
 
     render () {
@@ -39,8 +43,8 @@ class CityIndexItem extends React.Component {
                     <div class='animated' id="bar-graph">
                         <svg id='svg' width="1000" height="400">
                         </svg>
-                        <PieChart currentCity={currentCity}/>
                     </div>
+                    <button onClick={this.switchToPieChart.bind(this)}>Racial Demographics</button>
                 </div>
             )  
         } else {
