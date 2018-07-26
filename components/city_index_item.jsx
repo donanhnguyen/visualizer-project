@@ -7,7 +7,7 @@ import {
     HashRouter
 } from 'react-router-dom';
 import Cities from "../js/cities";
-import * as D3Stuff from '../js/d3-stuff';
+import createBarChart from '../js/createBarChart';
 import PieChart from './pie-chart'; 
 class CityIndexItem extends React.Component {
 
@@ -25,7 +25,7 @@ class CityIndexItem extends React.Component {
     componentDidMount() {
         setTimeout(function () {
             this.setState({loaded: true});
-            D3Stuff.createBarChart(this.state.currentCityPopulation);
+            createBarChart(this.state.currentCityPopulation);
         }.bind(this), 700);
     }
 
@@ -38,7 +38,7 @@ class CityIndexItem extends React.Component {
 
     render () {
         var currentCity = this.state.currentCity;
-        console.log(this.state.pieChart);
+
         if (this.state.loaded) {
             return (
                 <div>

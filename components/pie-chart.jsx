@@ -7,7 +7,6 @@ import {
     HashRouter
 } from 'react-router-dom';
 import Cities from "../js/cities";
-import * as D3Stuff from '../js/d3-stuff';
 
 class PieChart extends React.Component {
 
