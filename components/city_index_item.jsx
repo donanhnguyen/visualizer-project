@@ -29,6 +29,12 @@ class CityIndexItem extends React.Component {
         }.bind(this), 700);
     }
 
+    componentDidUpdate () {
+        if (this.state.loaded) {
+            createBarChart(this.state.currentCityPopulation);
+        }
+    }
+
     switchToPieChart () {
         this.setState({
             pieChart: true,
@@ -36,9 +42,16 @@ class CityIndexItem extends React.Component {
         });
     }
 
+    switchToBarChart () {
+        this.setState({
+            pieChart: false,
+            loaded: true
+        })
+    }
+
     render () {
         var currentCity = this.state.currentCity;
-
+        
         if (this.state.loaded) {
             return (
                 <div>
@@ -48,7 +61,7 @@ class CityIndexItem extends React.Component {
                         <svg id='svg' width="1000" height="400">
                         </svg>
                     </div>
-                    <button onClick={this.switchToPieChart.bind(this)}>Racial Demographics</button>
+                    <button class='qbutton' onClick={this.switchToPieChart.bind(this)}>Racial Demographics</button>
                 </div>
             )  
         } else if (!this.state.loaded && !this.state.pieChart) {
@@ -63,7 +76,7 @@ class CityIndexItem extends React.Component {
             )
         } else if (this.state.pieChart) {
             return (
-                <PieChart currentCity={currentCity}/>
+                <PieChart currentCity={currentCity} switchToBarChart={this.switchToBarChart.bind(this)}/>
             )
         }
         
