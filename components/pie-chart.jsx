@@ -28,9 +28,7 @@ class PieChart extends React.Component {
             <button class='qbutton' onClick={switchToBarChart}>Back to Bar Graph</button>
             <button class='qbutton'><Link class='city-link' to='/'>Back to home page</Link></button>
                 <div class='pie-chart-container'>
-                    pie chart bitch
-                    <br/>
-                    {currentCity.name}
+                    <h1>2018 Racial Demographics for {currentCity.name}</h1>
                 </div>
 
 
