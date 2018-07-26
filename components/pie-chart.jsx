@@ -17,7 +17,8 @@ class PieChart extends React.Component {
     }
 
     componentDidMount() {
-   
+        var {currentCity} = this.props;
+        createPieChart(currentCity.demographics);
     }
 
     render () {
@@ -29,6 +30,10 @@ class PieChart extends React.Component {
             <button class='qbutton'><Link class='city-link' to='/'>Back to home page</Link></button>
                 <div class='pie-chart-container'>
                     <h1>2018 Racial Demographics for {currentCity.name}</h1>
+
+                    <div id="pie-chart">
+                        
+                    </div>
                 </div>
 
 

@@ -2,7 +2,7 @@ const createBarChart = (array) => {
 
 var colors = d3.schemeCategory10;
 
-var svg = d3.select("#svg");
+var svg = d3.select("#bar-chart");
 
 var padding = {top: 20, right: 30, bottom: 30, left: 80};
 

@@ -50,7 +50,7 @@ a:hover, a:active { text-decoration: none;}
     cursor: pointer;
 }
 
-#svg {
+#bar-chart {
     box-shadow: 1px 1px 1px 1px gray;
     background: radial-gradient(rgb(244, 244, 244), rgba(231, 241, 252, 0.756));
     border-radius: 15px;

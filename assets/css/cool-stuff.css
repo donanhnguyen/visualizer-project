@@ -9,7 +9,7 @@
     border-radius: 10px;
 }
 .qbutton {
-    color: rgba(125, 168, 232, 0.988);
+    color: rgb(102, 126, 169);
     box-shadow: rgba(119, 136, 155, 0.783) 0 0px 0px 1px inset;
 }
 .qbutton:hover {

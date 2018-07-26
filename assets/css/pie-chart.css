@@ -1,0 +1,8 @@
+.pie-slice {
+    opacity: 0.8;
+}
+.pie-slice:hover {
+    opacity: 1;
+    cursor: pointer;
+    border: 1px solid black;
+}
