@@ -1,7 +1,6 @@
 const createPieChart = (array) => {
 
     console.log(d3);
-    console.log(array);
 
     var width = 500;
     var height = 500;
