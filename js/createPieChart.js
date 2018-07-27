@@ -2,8 +2,8 @@ const createPieChart = (array) => {
 
     console.log(d3);
 
-    var width = 500;
-    var height = 500;
+    var width = 440;
+    var height = 440;
     var radius = Math.min(width, height) / 2;
 
     // var color = d3.scaleOrdinal(d3.schemeCategory20b);

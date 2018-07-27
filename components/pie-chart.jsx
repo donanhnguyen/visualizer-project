@@ -36,7 +36,7 @@ class PieChart extends React.Component {
                     <div class='pie-chart-container'>
                         <h1>2018 Racial Demographics for {currentCity.name}</h1>
 
-                        <div id="pie-chart">
+                        <div class='animated bounce' id="pie-chart">
                             
                         </div>
                     </div>
