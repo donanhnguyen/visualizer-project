@@ -49,10 +49,6 @@ const createPieChart = (array) => {
 
     restOfTheData(svg, pie, array, arc);
 
-
-
-
-    
 };
 
 const restOfTheData = (svg, pie, array, arc) => {

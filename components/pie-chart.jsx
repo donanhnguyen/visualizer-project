@@ -23,7 +23,7 @@ class PieChart extends React.Component {
         setTimeout(function () {
             this.setState({loaded: true});
             createPieChart(currentCity.demographics);
-        }.bind(this), 450);
+        }.bind(this), 400);
     }
 
     render () {
