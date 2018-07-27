@@ -38,7 +38,8 @@ yAxisFn(yAxis);
 var rectGrp = svg.append("g")
     .attr(
         "transform", "translate ("+ padding.left + "," + padding.top + ")"
-    );
+    )
+    .attr("id", "allBars")
 
 rectGrp.selectAll("rect")
     .data(array)
@@ -71,6 +72,8 @@ rectGrp.selectAll("text")
     })
     .attr("style", "font-size: 17px")
 
+    // console.log(document.getElementById("allBars").querySelectorAll("rect"));
+    // hover over each bar and display percentage change from previous bar
 };
 
 export default createBarChart;
