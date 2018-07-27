@@ -1,12 +1,9 @@
 const createPieChart = (array) => {
 
-    console.log(d3);
-
     var width = 440;
     var height = 440;
     var radius = Math.min(width, height) / 2;
 
-    // var color = d3.scaleOrdinal(d3.schemeCategory20b);
     var color = ["blue", "green", "red", "orange", "purple", "gray"];
 
     var svg = d3.select('#pie-chart')
@@ -19,10 +16,6 @@ const createPieChart = (array) => {
     var arc = d3.arc()
     .innerRadius(150)
     .outerRadius(radius);
-
-    var labelArc = d3.arc()
-        .outerRadius(radius - 50)
-        .innerRadius(radius - 50)
 
     var pie = d3.pie()
     .value(function(d) { return d.percentage; })
