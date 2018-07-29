@@ -104,8 +104,7 @@ rectGrp.selectAll("text")
     })
     .attr("style", "font-size: 17px")
 
-    hoverOverEachBar();
-
+   hoverOverEachBar(); 
 };
 
 
