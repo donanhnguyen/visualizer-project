@@ -103,8 +103,7 @@ rectGrp.selectAll("text")
         return d.pop;
     })
     .attr("style", "font-size: 17px")
-
-   hoverOverEachBar(); 
+  
 };
 
 
