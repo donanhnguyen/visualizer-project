@@ -1,5 +1,37 @@
-const createBarChart = (array) => {
+var d3 = require("./d3.js");
 
+
+const getElementIndex = (element) => {
+    const elementIndex = Array.prototype.indexOf.call(element.parentNode.children, element);
+    return elementIndex;
+};
+
+const calculatePercentageDifference = (num1, num2) => {
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
+    var difference = num2 - num1;
+    var percentageDifference = (difference / num1) * 100;
+    return percentageDifference.toFixed(1);
+;}
+
+const hoverOverEachBar = () => {
+
+    var everyBar = document.getElementById("allBars").querySelectorAll("rect");
+    var everyBarText = document.getElementById("allBars").querySelectorAll("text");
+    for (let i = 0; i< everyBar.length; i++) {
+        let currentBar = everyBar[i];
+        if (i !== 0) {
+            currentBar.addEventListener("click", function () {
+                // everyBarText[i].innerHTML = calculatePercentageDifference(everyBarText[i-1].innerHTML, everyBarText[i].innerHTML);
+                console.log(calculatePercentageDifference(everyBarText[i-1].innerHTML, everyBarText[i].innerHTML));
+            })
+        }
+    }
+};
+
+
+const createBarChart = (array) => {
+    
 var colors = d3.schemeCategory10;
 
 var svg = d3.select("#bar-chart");
@@ -72,8 +104,9 @@ rectGrp.selectAll("text")
     })
     .attr("style", "font-size: 17px")
 
-    // console.log(document.getElementById("allBars").querySelectorAll("rect"));
-    // hover over each bar and display percentage change from previous bar
+    hoverOverEachBar();
+
 };
+
 
 export default createBarChart;

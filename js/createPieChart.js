@@ -1,3 +1,5 @@
+var d3 = require("./d3.js");
+
 const createPieChart = (array) => {
 
     var width = 440;
