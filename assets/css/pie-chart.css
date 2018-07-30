@@ -6,6 +6,9 @@
     cursor: pointer;
     border: 1px solid black;
 }
+.pie-chart-container h1 {
+  font-size: 20px;
+}
 
 /* spinner */
 .pie-chart-spinner {
