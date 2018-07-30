@@ -87,15 +87,15 @@ const createPieChart = (dataset) => {
 
 
 // chart dimensions
-var width = 500;
+var width = 1200;
 var height = 500;
 
 // a circle chart needs a radius
 var radius = Math.min(width, height) / 2;
 
 // legend dimensions
-var legendRectSize = 25; // defines the size of the colored squares in legend
-var legendSpacing = 6; // defines spacing between squares
+var legendRectSize = 40; // defines the size of the colored squares in legend
+var legendSpacing = 12; // defines spacing between squares
 
 // define color scale
 var color1 = d3.schemeCategory10;
@@ -107,7 +107,8 @@ var svg = d3.select('#pie-chart') // select element in the DOM with id 'chart'
   .attr('width', width) // set the width of the svg element we just added
   .attr('height', height) // set the height of the svg element we just added
   .append('g') // append 'g' element to the svg element
-  .attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')'); // our reference is now to the 'g' element. centerting the 'g' element to the svg element
+//   .attr('transform', 'translate(' + (width / 2) + ',' + (height / 2) + ')'); // our reference is now to the 'g' element. centerting the 'g' element to the svg element
+  .attr('transform', 'translate(' + (400) + ',' + (height / 2) + ')'); // our reference is now to the 'g' element. centerting the 'g' element to the svg element
 
 var arc = d3.arc()
   .innerRadius(0) // none for pie chart
@@ -159,6 +160,16 @@ var path = svg.selectAll('path') // select all path elements inside the svg. spe
     .attr("class", "pie-slice")
   .each(function(d) { this._current - d; }); // creates a smooth animation for each track
 
+    path.transition()
+    .duration(1000)
+    .attrTween('d', function(d) {
+        var interpolate = d3.interpolate({startAngle: 0, endAngle: 0}, d);
+        return function(t) {
+            return arc(interpolate(t));
+        };
+    });
+
+//text
     var text = svg.selectAll('text')
     .data(pie(dataset))
     .enter()
@@ -174,8 +185,7 @@ var path = svg.selectAll('path') // select all path elements inside the svg. spe
         return d.data.percentage + "%";
     })
     .attr("style", "font-size: 15px; fill: white")
-
-
+//text
 
 // mouse event handlers are attached to path so they need to come after its definition
 path.on('mouseover', function(d) {  // when mouse enters div      
@@ -199,26 +209,28 @@ path.on('mousemove', function(d) { // when mouse moves
   });
 
 // define legend
+
 var legend = svg.selectAll('.legend') // selecting elements with class 'legend'
-  .data(color.domain()) // refers to an array of labels from our dataset
+  .data(pie(dataset)) // refers to an array of labels from our dataset
   .enter() // creates placeholder
   .append('g') // replace placeholders with g elements
   .attr('class', 'legend') // each g is given a legend class
   .attr('transform', function(d, i) {                   
     var height = legendRectSize + legendSpacing; // height of element is the height of the colored square plus the spacing      
-    var offset =  height * color.domain().length / 2; // vertical offset of the entire legend = height of a single element & half the total number of elements  
+    var offset =  height * dataset.length / 2; // vertical offset of the entire legend = height of a single element & half the total number of elements  
     var horz = 18 * legendRectSize; // the legend is shifted to the left to make room for the text
     var vert = i * height - offset; // the top of the element is hifted up or down from the center using the offset defiend earlier and the index of the current element 'i'               
-      return 'translate(' + horz + ',' + vert + ')'; //return translation       
+    //   return 'translate(' + horz + ',' + vert + ')'; //return translation
+      return 'translate(' + 500 + ',' + vert + ')'; //return translation       
    });
 
 // adding colored squares to legend
 legend.append('rect') // append rectangle squares to legend                                   
   .attr('width', legendRectSize) // width of rect size is defined above                        
   .attr('height', legendRectSize) // height of rect size is defined above                      
-  .style('fill', color) // each fill is passed a color
-  .style('stroke', color) // each stroke is passed a color
-  .on('click', function(label) {
+  .style('fill', function(d, i) { return color1[i]; }) // each fill is passed a color
+  .style('stroke', function(d, i) { return color1[i]; }) // each stroke is passed a color
+  .on('click', function(d, i) {
     var rect = d3.select(this); // this refers to the colored squared just clicked
     var enabled = true; // set enabled true to default
     var totalEnabled = d3.sum(dataset.map(function(d) { // can't disable all options
@@ -254,8 +266,10 @@ legend.append('rect') // append rectangle squares to legend
 // adding text to legend
 legend.append('text')                                    
   .attr('x', legendRectSize + legendSpacing)
-  .attr('y', legendRectSize - legendSpacing)
-  .text(function(d) { return d; }); // return label
+  .attr('y', legendRectSize - legendSpacing) 
+  .attr('style', 'font-size: 20px')
+  .text(function(d) { return d.data.race; }); // return label
+ 
 }
 
 export default createPieChart;

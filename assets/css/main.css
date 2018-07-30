@@ -42,7 +42,7 @@ a:hover, a:active { text-decoration: none;}
     margin: 7px;
     color: white;
     padding: 7px;
-    opacity: 0.6;
+    opacity: 0.9;
 }
 .bar:hover {
     opacity: 1;
