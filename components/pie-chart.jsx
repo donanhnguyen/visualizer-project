@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import Cities from "../js/cities";
 import createPieChart from '../js/createPieChart';
-
+import createFakePieChart from '../js/createFakePieChart';
 class PieChart extends React.Component {
 
     constructor(props) {
@@ -23,6 +23,7 @@ class PieChart extends React.Component {
         setTimeout(function () {
             this.setState({loaded: true});
             createPieChart(currentCity.demographics);
+
         }.bind(this), 400);
     }
 

@@ -230,7 +230,7 @@ legend.append('rect') // append rectangle squares to legend
   .attr('height', legendRectSize) // height of rect size is defined above                      
   .style('fill', function(d, i) { return color1[i]; }) // each fill is passed a color
   .style('stroke', function(d, i) { return color1[i]; }) // each stroke is passed a color
-  .on('click', function(d, i) {
+  .on('click', function(race) {
     var rect = d3.select(this); // this refers to the colored squared just clicked
     var enabled = true; // set enabled true to default
     var totalEnabled = d3.sum(dataset.map(function(d) { // can't disable all options
