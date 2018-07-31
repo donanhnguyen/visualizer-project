@@ -247,7 +247,7 @@ legend.append('rect') // append rectangle squares to legend
 
     pie.value(function(d) { 
       if (d.race === race) d.enabled = enabled; // if entry label matches legend label
-        return (d.enabled) ? d.count : 0; // update enabled property and return count or 0 based on the entry's status
+        return (d.enabled) ? d.percentage : 0; // update enabled property and return count or 0 based on the entry's status
     });
 
     path = path.data(pie(dataset)); // update pie with new data
