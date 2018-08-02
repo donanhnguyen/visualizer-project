@@ -1,6 +1,7 @@
 var d3 = require("./d3.js");
 
 const createPieChart = (dataset) => {
+
 var width = 1200;
 var height = 500;
 
@@ -68,21 +69,21 @@ var path = svg.selectAll('path')
     });
 
 //text
-    var text = svg.selectAll('text')
-    .data(pie(dataset))
-    .enter()
-    .append("text")
-    .transition()
-    .duration(1000)
-    .attr("transform", function (d) {
-        return "translate(" + arc.centroid(d) + ")";
-    })
-    .attr("dy", ".60em")
-    .attr("text-anchor", "middle")
-    .text(function(d){
-        return d.data.percentage + "%";
-    })
-    .attr("style", "font-size: 15px; fill: white")
+    // var text = svg.selectAll('text')
+    // .data(pie(dataset))
+    // .enter()
+    // .append("text")
+    // .transition()
+    // .duration(1000)
+    // .attr("transform", function (d) {
+    //     return "translate(" + arc.centroid(d) + ")";
+    // })
+    // .attr("dy", ".60em")
+    // .attr("text-anchor", "middle")
+    // .text(function(d){
+    //     return d.data.percentage + "%";
+    // })
+    // .attr("style", "font-size: 15px; fill: white")
 //text
 
 
@@ -143,14 +144,14 @@ legend.append('rect')
     }
 
     pie.value(function(d) { 
-      if (d.race === race) d.enabled = enabled; // if entry label matches legend label
+      if (d.race === race.data.race) d.enabled = enabled; // if entry label matches legend label
         return (d.enabled) ? d.percentage : 0; // update enabled property and return count or 0 based on the entry's status
     });
 
     path = path.data(pie(dataset)); // update pie with new data
 
     path.transition() // transition of redrawn pie
-      .duration(2000) // 
+      .duration(700) // 
       .attrTween('d', function(d) { // 'd' specifies the d attribute that we'll be animating
         var interpolate = d3.interpolate(this._current, d); // this = current path element
         this._current = interpolate(0); // interpolate between current value and the new value of 'd'
@@ -164,9 +165,8 @@ legend.append('rect')
 legend.append('text')                                    
   .attr('x', legendRectSize + legendSpacing)
   .attr('y', legendRectSize - legendSpacing) 
-  .attr('style', 'font-size: 20px')
+  .attr('style', 'font-size: 18px')
   .text(function(d) { return d.data.race; }); 
- 
 }
 
 export default createPieChart;
