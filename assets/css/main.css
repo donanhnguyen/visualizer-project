@@ -42,12 +42,12 @@ a:hover, a:active { text-decoration: none;}
     margin: 7px;
     color: white;
     padding: 7px;
-    opacity: 0.9;
+
 }
-.bar:hover {
+/* .bar:hover {
     opacity: 1;
     cursor: pointer;
-}
+} */
 
 #bar-chart {
     box-shadow: 1px 1px 1px 1px gray;
