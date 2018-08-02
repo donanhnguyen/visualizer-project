@@ -26,7 +26,7 @@ class CitiesSplash extends React.Component {
     render () {
         return (
             <div class='animated zoomIn'>
-                <h1 class='heading'>Here are the top fastest growing cities in America!</h1>
+                <h1 class='heading'>Here are the top fastest growing cities in America, as of 2018!</h1>
                 <div class='cities-splash'>
                     {this.allCities()}
                 </div>
