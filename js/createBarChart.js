@@ -1,6 +1,5 @@
 var d3 = require("./d3.js");
 
-
 const getElementIndex = (element) => {
     const elementIndex = Array.prototype.indexOf.call(element.parentNode.children, element);
     return elementIndex;

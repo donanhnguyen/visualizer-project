@@ -1,5 +1,6 @@
-const createPieChart = (dataset) => {
+var d3 = require("./d3.js");
 
+const createPieChart = (dataset) => {
 var width = 1200;
 var height = 500;
 
@@ -149,7 +150,7 @@ legend.append('rect')
     path = path.data(pie(dataset)); // update pie with new data
 
     path.transition() // transition of redrawn pie
-      .duration(750) // 
+      .duration(2000) // 
       .attrTween('d', function(d) { // 'd' specifies the d attribute that we'll be animating
         var interpolate = d3.interpolate(this._current, d); // this = current path element
         this._current = interpolate(0); // interpolate between current value and the new value of 'd'
