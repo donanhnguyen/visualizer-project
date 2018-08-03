@@ -7,7 +7,7 @@ import {
     HashRouter
 } from 'react-router-dom';
 import CitiesSplash from "./citiesSplash";
-import CityIndexItem from './city_index_item';
+import BarChart from './bar-chart';
 
 class App extends React.Component {
 
@@ -19,7 +19,7 @@ class App extends React.Component {
         return (
             <div>
                 <Route exact path='/' component={CitiesSplash}/>
-                <Route path='/:cityId' component={CityIndexItem} />
+                <Route path='/:cityId' component={BarChart} />
             </div>
         )
     }

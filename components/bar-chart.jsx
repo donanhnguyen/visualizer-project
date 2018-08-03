@@ -10,7 +10,7 @@ import {
 import Cities from "../js/cities";
 import createBarChart from '../js/createBarChart';
 import PieChart from './pie-chart'; 
-class CityIndexItem extends React.Component {
+class BarChart extends React.Component {
 
     constructor(props) {
         super(props);
@@ -85,4 +85,4 @@ class CityIndexItem extends React.Component {
 
 }
 
-export default CityIndexItem;
+export default BarChart;
