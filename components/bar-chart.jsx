@@ -52,7 +52,7 @@ class BarChart extends React.Component {
 
     render () {
         var currentCity = this.state.currentCity;
-        
+
         if (this.state.loaded) {
             return (
                 <div>

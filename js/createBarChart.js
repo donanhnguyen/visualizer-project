@@ -30,7 +30,7 @@ const hoverOverEachBar = () => {
 
 
 const createBarChart = (array) => {
-    
+
 var colors = d3.schemeCategory10;
 
 var svg = d3.select("#bar-chart");
@@ -91,6 +91,50 @@ rectGrp.selectAll("rect")
     })
     .attr("class", "bar bar-increase")
 
+//hover effect + tooltip
+var allBars = rectGrp.selectAll("rect");
+var tooltip = d3.select('#bar-graph') 
+  .append('div')                                   
+  .attr('class', 'tooltip'); 
+
+tooltip.append('div')                          
+  .attr('class', 'label');                          
+
+tooltip.append('div')                    
+  .attr('class', 'count');                  
+
+tooltip.append('div')  
+  .attr('class', 'percent');
+
+allBars.on('mouseover', function(d, i) {   
+
+    var everyBarText = document.getElementById("allBars").querySelectorAll("text");
+    if (i !== 0) {
+        var percentageDiff = calculatePercentageDifference(everyBarText[i-1].innerHTML, everyBarText[i].innerHTML);
+        if (percentageDiff < 0) {
+             tooltip.select('.percent').html(percentageDiff + "%");
+        } else {
+            tooltip.select('.percent').html('+' + percentageDiff + "%");
+        }
+        tooltip.style('display', 'block')
+        .style('color', 'green');    
+    } 
+                     
+});                                                           
+   
+allBars.on('mouseout', function() {                    
+    tooltip.style('display', 'none'); 
+});
+   
+allBars.on('mousemove', function(d) {                
+     tooltip.style('top', (d3.event.layerY + 10) + 'px') 
+       .style('left', (d3.event.layerX + 10) + 'px'); 
+     });
+
+//--->
+
+
+
 rectGrp.selectAll("text")
     .data(array)
     .enter()
@@ -104,6 +148,9 @@ rectGrp.selectAll("text")
     .attr("style", "font-size: 17px")
   
 };
+
+
+
 
 
 export default createBarChart;
