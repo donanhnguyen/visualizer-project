@@ -10,10 +10,7 @@ var radius = Math.min(width, height) / 2;
 var legendRectSize = 40; 
 var legendSpacing = 12;
 
-// define color scale
 var color1 = d3.schemeCategory10;
-var color = d3.scaleOrdinal(d3.schemeCategory20c);
-// more color scales: https://bl.ocks.org/pstuffa/3393ff2711a53975040077b7453781a9
 
 var svg = d3.select('#pie-chart') 
   .append('svg') 
@@ -26,9 +23,9 @@ var arc = d3.arc()
   .innerRadius(0) 
   .outerRadius(radius); 
 
-var pie = d3.pie() // start and end angles of the segments
-  .value(function(d) { return d.percentage; }) // how to extract the numerical data from each entry in our dataset
-  .sort(null); // by default, data sorts in oescending value. this will mess with our animation so we set it to null
+var pie = d3.pie() 
+  .value(function(d) { return d.percentage; }) 
+  .sort(null); 
 
 
 var tooltip = d3.select('#pie-chart') 
@@ -45,11 +42,10 @@ tooltip.append('div')
   .attr('class', 'percent');
 
 dataset.forEach(function(d) {
-  d.percentage = +d.percentage; // calculate count as we iterate through the data
-  d.enabled = true; // add enabled property to track which entries are checked
+  d.percentage = +d.percentage; 
+  d.enabled = true; 
 });
 
-// creating the chart
 var path = svg.selectAll('path')
   .data(pie(dataset)) 
   .enter() 
@@ -89,13 +85,12 @@ var path = svg.selectAll('path')
 
 path.on('mouseover', function(d) {      
  var total = d3.sum(dataset.map(function(d) {  
-  return (d.enabled) ? d.percentage : 0; // checking to see if the entry is enabled. if it isn't, we return 0 and cause other percentages to increase                                      
+  return (d.enabled) ? d.percentage : 0;                                      
   }));                                                      
- var percent = Math.round(1000 * d.data.percentage / total) / 10; // calculate percent
- tooltip.select('.label').html(d.data.race); // set current label           
-//  tooltip.select('.count').html('$' + d.data.percentage); // set current count            
- tooltip.select('.percent').html(percent + '%'); // set percent calculated above          
- tooltip.style('display', 'block'); // set display                     
+ var percent = Math.round(1000 * d.data.percentage / total) / 10;
+ tooltip.select('.label').html(d.data.race);                     
+ tooltip.select('.percent').html(percent + '%');       
+ tooltip.style('display', 'block');                     
 });                                                           
 
 path.on('mouseout', function() {                    
@@ -107,7 +102,6 @@ path.on('mousemove', function(d) {
     .style('left', (d3.event.layerX + 10) + 'px'); 
   });
 
-// define legend
 
 var legend = svg.selectAll('.legend') 
   .data(pie(dataset)) 
@@ -122,46 +116,46 @@ var legend = svg.selectAll('.legend')
       return 'translate(' + 500 + ',' + vert + ')';     
    });
 
-// adding colored squares to legend
+
 legend.append('rect')                                
   .attr('width', legendRectSize)                        
   .attr('height', legendRectSize)                    
   .style('fill', function(d, i) { return color1[i]; }) 
   .style('stroke', function(d, i) { return color1[i]; }) 
   .on('click', function(race) {
-    var rect = d3.select(this); // this refers to the colored squared just clicked
-    var enabled = true; // set enabled true to default
-    var totalEnabled = d3.sum(dataset.map(function(d) { // can't disable all options
-      return (d.enabled) ? 1 : 0; // return 1 for each enabled entry. and summing it up
+    var rect = d3.select(this); 
+    var enabled = true; 
+    var totalEnabled = d3.sum(dataset.map(function(d) { 
+      return (d.enabled) ? 1 : 0;
     }));
 
-    if (rect.attr('class') === 'disabled') { // if class is disabled
-      rect.attr('class', ''); // remove class disabled
-    } else { // else
-      if (totalEnabled < 2) return; // if less than two labels are flagged, exit
-      rect.attr('class', 'disabled'); // otherwise flag the square disabled
-      enabled = false; // set enabled to false
+    if (rect.attr('class') === 'disabled') { 
+      rect.attr('class', ''); 
+    } else {
+      if (totalEnabled < 2) return; 
+      rect.attr('class', 'disabled'); 
+      enabled = false; 
     }
 
     pie.value(function(d) { 
-      if (d.race === race.data.race) d.enabled = enabled; // if entry label matches legend label
-        return (d.enabled) ? d.percentage : 0; // update enabled property and return count or 0 based on the entry's status
+      if (d.race === race.data.race) d.enabled = enabled; 
+        return (d.enabled) ? d.percentage : 0; 
     });
 
-    path = path.data(pie(dataset)); // update pie with new data
+    path = path.data(pie(dataset)); 
 
-    path.transition() // transition of redrawn pie
-      .duration(700) // 
-      .attrTween('d', function(d) { // 'd' specifies the d attribute that we'll be animating
-        var interpolate = d3.interpolate(this._current, d); // this = current path element
-        this._current = interpolate(0); // interpolate between current value and the new value of 'd'
+    path.transition() 
+      .duration(700) 
+      .attrTween('d', function(d) { 
+        var interpolate = d3.interpolate(this._current, d); 
+        this._current = interpolate(0);
         return function(t) {
           return arc(interpolate(t));
         };
       });
   });
 
-// adding text to legend
+
 legend.append('text')                                    
   .attr('x', legendRectSize + legendSpacing)
   .attr('y', legendRectSize - legendSpacing) 
