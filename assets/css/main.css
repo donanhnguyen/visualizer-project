@@ -37,17 +37,17 @@ a:hover, a:active { text-decoration: none;}
 .city-link:hover {
     color: rgb(0, 30, 128);
 }
-.bar {
+.single-bar {
     display: inline-block;
     margin: 7px;
     color: white;
     padding: 7px;
-
+    opacity: 0.75;
 }
-/* .bar:hover {
+.single-bar:hover {
     opacity: 1;
     cursor: pointer;
-} */
+}
 
 #bar-chart {
     box-shadow: 1px 1px 1px 1px gray;

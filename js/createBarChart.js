@@ -13,22 +13,6 @@ const calculatePercentageDifference = (num1, num2) => {
     return percentageDifference.toFixed(1);
 ;}
 
-const hoverOverEachBar = () => {
-
-    var everyBar = document.getElementById("allBars").querySelectorAll("rect");
-    var everyBarText = document.getElementById("allBars").querySelectorAll("text");
-    for (let i = 0; i< everyBar.length; i++) {
-        let currentBar = everyBar[i];
-        if (i !== 0) {
-            currentBar.addEventListener("click", function () {
-                // everyBarText[i].innerHTML = calculatePercentageDifference(everyBarText[i-1].innerHTML, everyBarText[i].innerHTML);
-                console.log(calculatePercentageDifference(everyBarText[i-1].innerHTML, everyBarText[i].innerHTML));
-            })
-        }
-    }
-};
-
-
 const createBarChart = (array) => {
 
 var colors = d3.schemeCategory10;
@@ -89,7 +73,7 @@ rectGrp.selectAll("rect")
     .attr("fill", function (d, i) {
         return colors[i];
     })
-    .attr("class", "bar bar-increase")
+    .attr("class", "single-bar bar-increase")
 
 //hover effect + tooltip
 var allBars = rectGrp.selectAll("rect");
@@ -133,8 +117,6 @@ allBars.on('mousemove', function(d) {
 
 //--->
 
-
-
 rectGrp.selectAll("text")
     .data(array)
     .enter()
@@ -148,9 +130,5 @@ rectGrp.selectAll("text")
     .attr("style", "font-size: 17px")
   
 };
-
-
-
-
 
 export default createBarChart;
