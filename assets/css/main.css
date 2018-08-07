@@ -30,6 +30,9 @@ a:hover, a:active { text-decoration: none;}
     width: 770px;
     margin: auto;
     padding: 150px;
+    box-shadow: 1px 1px 1px 1px gray;
+    border-radius: 10px;
+
 }
 .city-link {
     padding: 2px;
