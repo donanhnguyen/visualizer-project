@@ -34,7 +34,7 @@ class PieChart extends React.Component {
                 <button class='qbutton'><Link class='city-link' to='/'>Back to home page</Link></button>
                     <div class='pie-chart-container'>
                         <h1>2018 Racial Demographics for {currentCity.name}</h1>
-
+                        <h1>Click on labels to re-calculate.</h1>
                         <div id="pie-chart">
                             
                         </div>
