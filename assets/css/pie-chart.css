@@ -65,36 +65,18 @@
     }
   }
 
-
-  /* ///sex */
-
-
-  .title-holder {
-    text-align: center;
-  }
-  .title {
-    font-family: 'Lato', sans-serif;
-  }
-  .subtitle {
-    font-size: 20px;
-  }
-  .font {
-    font-size: 18px;
-  }
-  
-  /* legend */
-  .legend {
+.legend {
     font-size: 20px;
   }
   rect {
     cursor: pointer; 
-    stroke-width: 2;
+    stroke-width: 1;
+    border-radius: 50px;
   }
   rect.disabled {
     fill: transparent !important;
   }
   
-  /* chart */
   #pie-chart {
     height: 100%;
     margin: 0 auto;
@@ -111,8 +93,6 @@
     width: 1200px;
   }
   
-  
-  /* tooltip */
   .tooltip {
     background: rgb(255, 255, 255);
     box-shadow: 0 0 5px #323232;
@@ -126,10 +106,4 @@
     top: 95px;
     min-width: 80px;
     z-index: 10;
-  }
-  
-  .footer {
-    padding-top: 50px;
-    text-align: center;
-    list-style-type: none;
   }

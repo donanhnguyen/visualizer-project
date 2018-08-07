@@ -56,7 +56,7 @@ a:hover, a:active { text-decoration: none;}
 
 #bar-chart {
     box-shadow: 1px 1px 1px 1px gray;
-    background: radial-gradient(rgb(255, 255, 255), rgba(204, 229, 255, 0.831));
+    background: radial-gradient(rgb(255, 255, 255), rgba(216, 235, 255, 0.879));
     border-radius: 15px;
 }
 
